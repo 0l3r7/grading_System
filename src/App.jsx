@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Nav from "./navbar/nav";
 import Grade from "./grades/grade";
@@ -13,7 +13,7 @@ import ManageAccounts from "./admin/manageAccounts";
 
 function App() {
   return (
-    <BrowserRouter basename="/grading_System">
+    <HashRouter>
       <Routes>
         {/* Default Grade ni Rene */}
         <Route
@@ -27,24 +27,15 @@ function App() {
         />
 
         {/* Notification ni Rene */}
-        <Route
-          path="/notifications"
-          element={<Notifications />}
-        />
+        <Route path="/notifications" element={<Notifications />} />
 
         {/* UploadCSV */}
-        <Route
-          path="/uploadCSV"
-          element={<UploadCSV />}
-        />
+        <Route path="/uploadCSV" element={<UploadCSV />} />
 
         {/* DownloadCSV */}
-        <Route
-          path="/downloadCSV"
-          element={<DownloadCSV />}
-        />
+        <Route path="/downloadCSV" element={<DownloadCSV />} />
 
-        {/*ADMIN Manage Subject */}
+        {/* ADMIN Manage Subject */}
         <Route
           path="/manageSubject"
           element={
@@ -55,7 +46,7 @@ function App() {
           }
         />
 
-        {/*ADMIN Deadline And Reminders */}
+        {/* ADMIN Deadline And Reminders */}
         <Route
           path="/deadlines"
           element={
@@ -66,7 +57,7 @@ function App() {
           }
         />
 
-        {/*ADMIN Manage Accounts */}
+        {/* ADMIN Manage Accounts */}
         <Route
           path="/manage-accounts"
           element={
@@ -77,7 +68,7 @@ function App() {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
