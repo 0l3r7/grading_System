@@ -13,49 +13,49 @@ import ManageAccounts from "./admin/manageAccounts";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/grading_System">
       <Routes>
-        {/* Default Grade ni Rene  */}
-        <Route path="/" 
-        element={
-          <>
-         <Nav />
-        <Grade />
-        </>
-        } />
+        {/* Default Grade ni Rene */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Nav />
+              <Grade />
+            </>
+          }
+        />
 
         {/* Notification ni Rene */}
-        <Route path="/notifications"
-        element={
-          <Notifications/>
-        }
+        <Route
+          path="/notifications"
+          element={<Notifications />}
         />
 
         {/* UploadCSV */}
-        <Route path="/uploadCSV"
-        element={
-          <UploadCSV/>
-        }
+        <Route
+          path="/uploadCSV"
+          element={<UploadCSV />}
         />
 
         {/* DownloadCSV */}
-        <Route path="/downloadCSV"
-        element={
-          <DownloadCSV/>
-        }
+        <Route
+          path="/downloadCSV"
+          element={<DownloadCSV />}
         />
-        
-        <Route path="/manageSubject"
-        element={
-          <>
-          <NavAdmin/>
-          <MangeSubject/>
+
+        {/*ADMIN Manage Subject */}
+        <Route
+          path="/manageSubject"
+          element={
+            <>
+              <NavAdmin />
+              <MangeSubject />
             </>
-        }
+          }
         />
 
-
-      
+        {/*ADMIN Deadline And Reminders */}
         <Route
           path="/deadlines"
           element={
@@ -66,6 +66,7 @@ function App() {
           }
         />
 
+        {/*ADMIN Manage Accounts */}
         <Route
           path="/manage-accounts"
           element={
@@ -75,10 +76,7 @@ function App() {
             </>
           }
         />
-
       </Routes>
-
-
     </BrowserRouter>
   );
 }
